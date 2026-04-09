@@ -1,0 +1,129 @@
+{
+  "global_settings": [
+    {
+      "key": "normalization",
+      "value": "true"
+    },
+    {
+      "key": "outlier",
+      "value": "true"
+    }
+  ],
+  "detailParam": [
+    {
+      "wctid": "P9PIA0",
+      "technum": "IMM04",
+      "paramid": "INJ-MAX-PRESSURE",
+      "key": "rangeMin",
+      "value": "-1"
+    },
+    {
+      "wctid": "P9PIA0",
+      "technum": "IMM04",
+      "paramid": "INJ-MAX-PRESSURE",
+      "key": "rangeMax",
+      "value": "160"
+    },
+    {
+      "wctid": "P9PIA0",
+      "technum": "IMM04",
+      "paramid": "INJ-MAX-PRESSURE",
+      "key": "category",
+      "value": "true"
+    },
+    {
+      "wctid": "P9PIA0",
+      "technum": "IMM04",
+      "paramid": "INJ-MAX-PRESSURE",
+      "key": "threshold",
+      "value": "true"
+    },
+
+    {
+      "wctid": "P9PIA0",
+      "technum": "IMM04",
+      "paramid": "CUSHION-POSITION",
+      "key": "rangeMin",
+      "value": "-2"
+    },
+    {
+      "wctid": "P9PIA0",
+      "technum": "IMM04",
+      "paramid": "CUSHION-POSITION",
+      "key": "rangeMax",
+      "value": "70"
+    },
+    {
+      "wctid": "P9PIA0",
+      "technum": "IMM04",
+      "paramid": "CUSHION-POSITION",
+      "key": "category",
+      "value": "true"
+    },
+    {
+      "wctid": "P9PIA0",
+      "technum": "IMM04",
+      "paramid": "CUSHION-POSITION",
+      "key": "threshold",
+      "value": "true"
+    },
+
+    {
+      "wctid": "P9PIA0",
+      "technum": "IMM04",
+      "paramid": "NH1-TEMP",
+      "key": "rangeMin",
+      "value": "-3"
+    },
+    {
+      "wctid": "P9PIA0",
+      "technum": "IMM04",
+      "paramid": "NH1-TEMP",
+      "key": "rangeMax",
+      "value": "238"
+    },
+    {
+      "wctid": "P9PIA0",
+      "technum": "IMM04",
+      "paramid": "NH1-TEMP",
+      "key": "category",
+      "value": "true"
+    },
+    {
+      "wctid": "P9PIA0",
+      "technum": "IMM04",
+      "paramid": "NH1-TEMP",
+      "key": "threshold",
+      "value": "true"
+    },
+
+    {
+      "wctid": "P9PIA0",
+      "technum": "IMM04",
+      "paramid": "NH2-TEMP",
+      "key": "rangeMin",
+      "value": "-4"
+    },
+    {
+      "wctid": "P9PIA0",
+      "technum": "IMM04",
+      "paramid": "NH2-TEMP",
+      "key": "rangeMax",
+      "value": "250"
+    },
+    {
+      "wctid": "P9PIA0",
+      "technum": "IMM04",
+      "paramid": "NH2-TEMP",
+      "key": "category",
+      "value": "true"
+    },
+    {
+      "wctid": "P9PIA0",
+      "technum": "IMM04",
+      "paramid": "NH2-TEMP",
+      "key": "threshold",
+      "value": "true"
+    }
+  ]
+}
