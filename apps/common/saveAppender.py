@@ -18,44 +18,38 @@ def saveAndAppend(json_str: str, base_dir: str = "apps/data/result"):
         if df_new.empty:
             return True
             
-        # [PERBAIKAN PARQUET] Merapikan memori kolom tipe 'object'
         for col in df_new.columns:
             if df_new[col].dtype == 'object':
                 df_new[col] = df_new[col].astype(str).tolist()
 
-        # =========================================================
-        # 1. Simpan ke format Standard JSON Array [...]
-        # =========================================================
         new_data_list = json.loads(df_new.to_json(orient='records'))
         
         existing_data = []
         if os.path.exists(json_path):
-            # Baca data lama jika filenya sudah ada
             try:
                 with open(json_path, 'r') as f:
                     existing_data = json.load(f)
             except json.JSONDecodeError:
-                existing_data = [] # Jika file korup/kosong, mulai dari awal
+                existing_data = []
                 
-        # Gabungkan data lama dengan data baru dari batch ini
         existing_data.extend(new_data_list)
         
-        # Tulis ulang sebagai Array JSON yang rapi
         with open(json_path, 'w') as f:
             json.dump(existing_data, f, indent=4)
         
-        # =========================================================
-        # 2. Simpan ke Parquet
-        # =========================================================
         try:
             if os.path.exists(parquet_path):
-                df_new.to_parquet(parquet_path, engine='pyarrow', append=True)
+                df_existing = pd.read_parquet(parquet_path)
+                df_combined = pd.concat([df_existing, df_new], ignore_index=True)
             else:
-                df_new.to_parquet(parquet_path, engine='pyarrow')
+                df_combined = df_new
+                
+            df_combined.to_parquet(parquet_path, engine='pyarrow', index=False)
+            
         except Exception as pq_err:
-            print(f"\n[INFO] File Parquet lama korup/beda skema ({pq_err}).")
-            print("[INFO] Memaksa menimpa file Parquet...")
-            df_new.to_parquet(parquet_path, engine='pyarrow', append=False)
+            print(f"\n[INFO] File Parquet lama bermasalah ({pq_err}).")
+            print("[INFO] Memaksa menimpa file Parquet dengan data baru...")
+            df_new.to_parquet(parquet_path, engine='pyarrow', index=False)
             
         print(f"Data SUKSES tersimpan ke: {json_path} & {parquet_path}")
         return True

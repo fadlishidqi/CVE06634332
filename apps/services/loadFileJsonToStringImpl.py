@@ -1,7 +1,7 @@
 from apps.common.loadFileJsonToString import loadFileJsonToString
 
 def main():
-    pathSource = "apps/data/result/presetViewsData.json"
+    pathSource = "apps/data/result/final_output.json"
 
     print("Memulai proses load JSON ke memory (string)...")
     hasil_string = loadFileJsonToString(pathSource=pathSource)

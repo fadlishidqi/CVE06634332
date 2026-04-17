@@ -1,7 +1,6 @@
-import pandas as pd
+import json
 from pathlib import Path
 import logging
-import io
 
 logger = logging.getLogger(__name__)
 
@@ -15,8 +14,11 @@ def writeStringJsonToFileJson(stringJson: str, pathTarget: str | Path) -> bool:
 
     try:
         logger.info("Menulis String JSON ke file fisik...")
-        df = pd.read_json(io.StringIO(stringJson.strip()))
-        df.to_json(target_obj, orient="records", indent=4)
+        records = json.loads(stringJson.strip())
+        target_obj.write_text(
+            json.dumps(records, ensure_ascii=False, indent=4),
+            encoding="utf-8"
+        )
         logger.info(f"SUKSES! File JSON berhasil dibuat di: {target_obj}")
         return True
     except Exception as e:

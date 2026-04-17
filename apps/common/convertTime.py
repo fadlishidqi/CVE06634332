@@ -77,6 +77,10 @@ def convertTime(
                         return val.tz_convert('+07:00').tz_localize(None).strftime(formatTime)
                 
                 df[col] = dt_series.apply(to_string_tz)
+
+        if formatTime in ("epoch", "epoch_ms"):
+            for col in keySource:
+                df[col] = pd.array(df[col], dtype="Int64")
             
         logger.info(f"Berhasil mengubah format waktu pada kolom {keySource} menjadi '{formatTime}'")
 

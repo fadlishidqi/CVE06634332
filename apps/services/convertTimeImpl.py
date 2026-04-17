@@ -4,7 +4,7 @@ def main():
     pathSource = "apps/data/result/renamedData.json" 
     pathTarget = "apps/data/result/convertedTime.json"
     keySource = ["t", "dcrea"] 
-    formatTime = "epoch_ms" 
+    formatTime = "%d-%m-%Y %H:%M:%S"
 
     print(f"Memulai proses convert format waktu JSON menjadi {formatTime}...")
     hasil = convertTime(

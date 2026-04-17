@@ -1,8 +1,8 @@
 from apps.common.convertJsonToParquet import convertJsonToParquet
 
 def main():
-    pathSource = "apps/data/result/presetViewsData.json"
-    pathTarget = "apps/data/result/convertedFromJson.parquet"
+    pathSource = "apps/data/result/ISD OPR_AHMMO RAW.json"
+    pathTarget = "apps/data/result/ISD OPR_AHMMO RAW.parquet"
 
     print(f"Memulai proses konversi dari JSON ke Parquet...")
     print(f"Source : {pathSource}")

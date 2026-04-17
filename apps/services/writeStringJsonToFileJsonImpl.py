@@ -2,7 +2,7 @@ from apps.common.loadFileJsonToString import loadFileJsonToString
 from apps.common.writeStringJsonToFileJson import writeStringJsonToFileJson
 
 def main():
-    pathSource = "apps/data/result/presetViewsData.json"
+    pathSource = "apps/data/result/final_output.json"
     print(f"1. Membaca data dari {pathSource} ke memori...")
     
     real_string_json = loadFileJsonToString(pathSource=pathSource)
