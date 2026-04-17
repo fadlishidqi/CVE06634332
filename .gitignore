@@ -73,3 +73,5 @@ htmlcov/
 .ruff_cache/
 *.pem
 cert/*.pem
+config/*.properties
+*.properties
