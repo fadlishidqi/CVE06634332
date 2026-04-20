@@ -6,7 +6,7 @@ from apps.common.decryptData import decryptData
 load_dotenv()
 
 def main():
-    pathConfig  = "apps/data/config/oracleConnection.properties"
+    pathConfig  = "apps/config/oracleConnection.properties"
     fernet_key  = os.getenv("FERNET_KEY", "")
 
     if not fernet_key:
